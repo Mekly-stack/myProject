@@ -6,15 +6,29 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    password: { // Make sure to hash this in real applications
+    name: {
         type: String,
         required: true
     },
-    email: {
+    address: {
         type: String,
         required: true
     },
-    // Add any other user-specific fields here
+    contactInfo: {
+        phone: {
+            type: String,
+            required: true
+        },
+        email: {
+            type: String,
+            required: true
+        }
+    },
+    // If you want to include authentication later:
+    // password: { 
+    //     type: String,
+    //     required: true
+    // },
 });
 
 module.exports = mongoose.model('User', userSchema);

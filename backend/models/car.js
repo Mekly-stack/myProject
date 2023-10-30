@@ -1,14 +1,33 @@
 const mongoose = require('mongoose');
 
 const carSchema = new mongoose.Schema({
-    make: String,
-    model: String,
-    year: Number,
+    registrationPlate: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    make: {
+        type: String,
+        required: true
+    },
+    model: {
+        type: String,
+        required: true
+    },
+    year: {
+        type: Number,
+        required: true
+    },
+    color: {
+        type: String,
+        required: true
+    },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true
     },
-    // Add any other car-specific fields here
+    // Add any other car-specific fields as needed
 });
 
 module.exports = mongoose.model('Car', carSchema);
