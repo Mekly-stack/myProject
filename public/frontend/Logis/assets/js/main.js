@@ -150,3 +150,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+// Function to search for locations using the Google Maps API
+function searchLocation(address) {
+  fetch(`http://localhost:3000/api/geocode?address=${encodeURIComponent(address)}`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Handle the data from the Google Maps API
+      console.log(data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+// Event listener for form submission
+document.querySelector('.form-search').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const addressInput = this.querySelector('.form-control');
+  searchLocation(addressInput.value);
+});
+// ... (rest of your main.js file)
+
+// Add this at the end of your main.js file
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('searchLocationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const address = document.getElementById('addressInput').value;
+    searchLocation(address);
+  });
+});
+
