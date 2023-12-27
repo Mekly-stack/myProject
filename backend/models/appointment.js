@@ -28,7 +28,7 @@ const appointmentSchema = new mongoose.Schema({
         ref: 'RepairShop',
         required: true
     },
-    // Add any other appointment-specific fields here, like any special instructions from the user
+    // Add any other appointment-specific fields here,any special instructions from the user
 });
 
 module.exports = mongoose.model('Appointment', appointmentSchema);

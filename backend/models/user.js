@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
             required: true
         }
     },
-    // If you want to include authentication later:
+    // To include authentication later:
     // password: {
     //     type: String,
     //     required: true
