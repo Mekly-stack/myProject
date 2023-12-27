@@ -32,7 +32,7 @@ const repairShopSchema = new mongoose.Schema({
         type: [String], // List of car makes or models they support
         required: true
     },
-    // You can add more fields later as your app evolves
+    // Add more fields
 });
 
 module.exports = mongoose.model('RepairShop', repairShopSchema);
