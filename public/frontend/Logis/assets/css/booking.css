@@ -1,0 +1,7 @@
+
+/* Card styling */
+
+.card.selected {
+    border: 2px solid blue; /* Just an example, you can customize it */
+    background-color: #f0f0f0; /* Another styling example for selected cards */
+  }
