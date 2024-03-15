@@ -14,26 +14,19 @@
         <form id="carRepairForm">
             <!-- Step 1: Service Selection -->
             <nav aria-label="...">
-                <ul class="pagination">
-                  <li class="page-item disabled">
-                    <span class="page-link">Previous</span>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item active" aria-current="page">
-                    <span class="page-link">
-                      2
-                      <span class="sr-only">(current)</span>
-                    </span>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                  </li>
-                </ul>
-              </nav>
+              <ul class="pagination">
+                  <li class="page-item"><span class="page-link">Välj tjänst</span></li>
+                  <li class="page-item"><span class="page-link">Dina kontaktuppgifter</span></li>
+                  <li class="page-item"><span class="page-link">Välj datum & tid</span></li>
+              </ul>
+          </nav>
             <div class="step" id="step1">
                 <h2>Select Repair Service</h2>
                 <!--  Deck card for selecting services-->
+                <div class="mb-3">
+                  <label for="plateNumber" class="form-label">Registreringsnummer</label>
+                  <input type="text" class="form-control" id="plateNumber" placeholder="ABC123">
+                </div>
                 <div class="card-group">
                   <div class="card">
 
@@ -57,18 +50,69 @@
                   </div>
                 </div>
                 <!-- more form fields here -->
-                <button type="button" class="btn btn-primary" onclick="nextStep()">Next</button>
+                <button type="button" class="btn btn-primary" onclick="nextStep()">Nästa</button>
             </div>
             <!-- Step 2: Contact Information -->
             <div class="step" id="step2" style="display:none;">
                 <h2>Kontakt</h2>
                 <!-- form fields here -->
-                <button type="button" class="btn btn-secondary" onclick="prevStep()">Previous</button>
-                <button type="submit" class="btn btn-success">Submit</button>
+                <div class="row">
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Förnamn" aria-label="First name">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Efternamn" aria-label="Last name">
+                  </div>
+                </div>
+
+                <form class="row g-3">
+                  <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                  </div>
+                  <div class="col-12">
+                    <label for="inputAddress" class="form-label">Adress</label>
+                    <input type="text" class="form-control" id="inputAddress" placeholder="Din adress">
+                  </div>
+                  <div class="col-13">
+                    <label for="telephonenumber" class="form-label">Telefonnummer</label>
+                    <input type="number" class="form-control" id="telephoneNumber" placeholder="Ditt telefonnummer">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="inputCity" class="form-label">Stad</label>
+                    <input type="text" class="form-control" id="inputCity">
+                  </div>
+                  <div class="col-md-2">
+                    <label for="inputZip" class="form-label">Post nummer</label>
+                    <input type="text" class="form-control" id="inputZip">
+                  </div>
+                </form>
+                <button type="button" class="btn btn-secondary" onclick="prevStep()">Tillbaka</button>
+<button type="button" class="btn btn-primary" onclick="nextStep()">Next</button>
+                <button type="submit" class="btn btn-success">Skicka</button>
             </div>
         </form>
     </div>
-
+<!-- Step 3: Choose Date and time-->
+<div class="step" id="step3" style="display:none;">
+  <h2>Välj tid</h2>
+    <!-- Day Selection -->
+    <div class="day-selection">
+        <h3>Välj dag:</h3>
+        <button type="button" class="btn day-btn" data-day="Monday">Måndag</button>
+        <button type="button" class="btn day-btn" data-day="Tuesday">Tisdag</button>
+        <button type="button" class="btn day-btn" data-day="Wednesday">Onsdag</button>
+        <button type="button" class="btn day-btn" data-day="Thursday">Torsdag</button>
+        <button type="button" class="btn day-btn" data-day="Friday">Fredag</button>
+    </div>
+    <!-- Time Slot Selection -->
+    <div class="time-selection mt-3">
+        <h3>Välj tid:</h3>
+        <button type="button" class="btn time-btn" data-time="8-12">8-12</button>
+        <button type="button" class="btn time-btn" data-time="13-15">13-15</button>
+        <button type="button" class="btn time-btn" data-time="16-18">16-18</button>
+    </div>
+</div>
 <div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
