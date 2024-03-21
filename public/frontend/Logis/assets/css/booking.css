@@ -6,8 +6,25 @@
     background-color: #f0f0f0; /* Another styling example for selected cards */
   }
 
+  /* Card styling (services) */
+.card {
+  cursor: pointer;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc; /* Light grey border */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Slight shadow */
+  border-radius: 5px; /* Rounded corners */
+  transition: transform 0.2s; /* Smooth transform */
+}
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Increase shadow */
+}
   /* Step 3 Date time */ 
   .selected {
     background-color: #007bff; /* Bootstrap primary color */
     color: white;
 }
+
+
+
